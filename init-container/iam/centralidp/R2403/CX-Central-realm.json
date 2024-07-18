@@ -2304,7 +2304,33 @@
         }
       ],
       "satest05": [],
-      "satest04": []
+      "satest04": [],
+      "app1": [
+        {
+          "id": "65e03e45-3bbe-42db-899a-0176229c5a16",
+          "name": "Supervisor",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "a3e002d8-2b88-4a1f-a4c4-78d9709d281c",
+          "attributes": {}
+        },
+        {
+          "id": "86cb40fa-7b2d-4b2a-9723-338c18c12e87",
+          "name": "User",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "a3e002d8-2b88-4a1f-a4c4-78d9709d281c",
+          "attributes": {}
+        },
+        {
+          "id": "ba7c9c69-72d7-4d54-8794-43885e7b949e",
+          "name": "Admin",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "a3e002d8-2b88-4a1f-a4c4-78d9709d281c",
+          "attributes": {}
+        }
+      ]
     }
   },
   "groups": [],
@@ -2381,6 +2407,96 @@
       "realmRoles" : [ "default-roles-catena-x realm" ],
       "clientRoles" : {
         "Cl2-CX-Portal" : [ "CX Admin" ]
+      },
+      "notBefore" : 0,
+      "groups" : [ ]
+    },
+    {
+      "id" : "5112bf07-311c-407c-8a22-add2f2ef5605",
+      "createdTimestamp" : 1652788086549,
+      "username" : "ec2c8dd2-9633-475d-8317-3c6ed2a3750b",
+      "enabled" : true,
+      "totp" : false,
+      "emailVerified" : false,
+      "firstName" : "TraceX Supervisor",
+      "lastName" : "CX Operator",
+      "email" : "tracex-supervisor@tx.test",
+      "attributes" : {
+        "bpn" : [ "BPNL00000003CRHK" ],
+        "organisation" : [ "CX-Operator" ]
+      },
+      "credentials" : [ ],
+      "disableableCredentialTypes" : [ ],
+      "requiredActions" : [ ],
+      "federatedIdentities" : [ {
+        "identityProvider" : "CX-Operator",
+        "userId" : "cd04956c-85d1-42d7-912b-1ffc1d59edf2",
+        "userName" : "tracex-supervisor@tx.test"
+      } ],
+      "realmRoles" : [ "default-roles-catena-x realm" ],
+      "clientRoles" : {
+        "Cl2-CX-Portal" : [ "CX Admin" ],
+        "app1": [ "Supervisor" ]
+      },
+      "notBefore" : 0,
+      "groups" : [ ]
+    },
+    {
+      "id" : "1aada74a-902b-434b-81c2-c3062f686757",
+      "createdTimestamp" : 1652788086549,
+      "username" : "0da795ce-02af-469e-9e00-2ab6c25abddd",
+      "enabled" : true,
+      "totp" : false,
+      "emailVerified" : false,
+      "firstName" : "TraceX User",
+      "lastName" : "CX Operator",
+      "email" : "tracex-user@tx.test",
+      "attributes" : {
+        "bpn" : [ "BPNL00000003CRHK" ],
+        "organisation" : [ "CX-Operator" ]
+      },
+      "credentials" : [ ],
+      "disableableCredentialTypes" : [ ],
+      "requiredActions" : [ ],
+      "federatedIdentities" : [ {
+        "identityProvider" : "CX-Operator",
+        "userId" : "151adef9-9850-44c7-9af1-fb0a22f8d912",
+        "userName" : "tracex-user@tx.test"
+      } ],
+      "realmRoles" : [ "default-roles-catena-x realm" ],
+      "clientRoles" : {
+        "Cl2-CX-Portal" : [ "CX Admin" ],
+        "app1": [ "User" ]
+      },
+      "notBefore" : 0,
+      "groups" : [ ]
+    },
+    {
+      "id" : "5f3fac21-9b5c-46f9-8bf8-dde11be17eca",
+      "createdTimestamp" : 1652788086549,
+      "username" : "86f9f4e9-7820-4ac3-856e-e1524eb8dd48",
+      "enabled" : true,
+      "totp" : false,
+      "emailVerified" : false,
+      "firstName" : "TraceX Admin",
+      "lastName" : "CX Operator",
+      "email" : "tracex-admin@tx.test",
+      "attributes" : {
+        "bpn" : [ "BPNL00000003CRHK" ],
+        "organisation" : [ "CX-Operator" ]
+      },
+      "credentials" : [ ],
+      "disableableCredentialTypes" : [ ],
+      "requiredActions" : [ ],
+      "federatedIdentities" : [ {
+        "identityProvider" : "CX-Operator",
+        "userId" : "716c46ed-cc55-453a-9d63-f2d1b157dc86",
+        "userName" : "tracex-admin@tx.test"
+      } ],
+      "realmRoles" : [ "default-roles-catena-x realm" ],
+      "clientRoles" : {
+        "Cl2-CX-Portal" : [ "CX Admin" ],
+        "app1": [ "Admin" ]
       },
       "notBefore" : 0,
       "groups" : [ ]
@@ -2640,6 +2756,54 @@
         "Cl7-CX-BPDM": [
           "add_company_data",
           "view_company_data"
+        ]
+      },
+      "notBefore": 0,
+      "groups": []
+    },
+    {
+      "id": "d91c567b-97b4-4aac-aedb-3763d4fe3af5",
+      "createdTimestamp": 1670157703230,
+      "username": "service-account-sa-test-trace",
+      "enabled": true,
+      "totp": false,
+      "emailVerified": false,
+      "serviceAccountClientId": "sa-test-trace",
+      "disableableCredentialTypes": [],
+      "requiredActions": [],
+      "realmRoles": [
+        "default-roles-catena-x realm"
+      ],
+      "clientRoles": {
+        "Cl22-CX-BPND": [
+          "view_bpn_discovery",
+          "delete_bpn_discovery",
+          "add_bpn_discovery"
+        ],
+        "Cl21-CX-DF": [
+          "view_discovery_endpoint"
+        ],
+        "technical_roles_management": [
+          "Dataspace Discovery",
+          "Semantic Model Management",
+          "Identity Wallet Management",
+          "CX Membership Info"
+        ],
+        "Cl5-CX-Custodian": [
+          "update_wallet",
+          "view_wallet"
+        ],
+        "Cl2-CX-Portal": [
+          "view_connectors",
+          "view_membership"
+        ],
+        "account": [
+          "manage-account",
+          "manage-account-links",
+          "view-profile"
+        ],
+        "Cl3-CX-Semantic": [
+          "view_semantic_model"
         ]
       },
       "notBefore": 0,
@@ -3132,6 +3296,14 @@
           "delete_bpn_discovery",
           "add_bpn_discovery"
         ]
+      },
+      {
+        "client": "sa-test-trace",
+        "roles": [
+          "view_bpn_discovery",
+          "delete_bpn_discovery",
+          "add_bpn_discovery"
+        ]
       }
     ],
     "realm-management": [
@@ -3151,6 +3323,12 @@
           "view_discovery_endpoint",
           "add_discovery_endpoint",
           "delete_discovery_endpoint"
+        ]
+      },
+      {
+        "client": "sa-test-trace",
+        "roles": [
+          "view_discovery_endpoint"
         ]
       }
     ],
@@ -3181,6 +3359,15 @@
           "Semantic Model Management",
           "Identity Wallet Management"
         ]
+      },
+      {
+        "client": "sa-test-trace",
+        "roles": [
+          "Dataspace Discovery",
+          "Semantic Model Management",
+          "Identity Wallet Management",
+          "CX Membership Info"
+        ]
       }
     ],
     "Cl5-CX-Custodian": [
@@ -3205,6 +3392,13 @@
           "view_wallet",
           "add_wallets"
         ]
+      },
+      {
+        "client": "sa-test-trace",
+        "roles": [
+          "update_wallet",
+          "view_wallet"
+        ]
       }
     ],
     "account": [
@@ -3213,6 +3407,14 @@
         "roles": [
           "manage-account",
           "view-groups"
+        ]
+      },
+      {
+        "client": "sa-test-trace",
+        "roles": [
+          "manage-account",
+          "manage-account-links",
+          "view-profile"
         ]
       }
     ],
@@ -3235,6 +3437,13 @@
         "roles": [
           "add_self_descriptions"
         ]
+      },
+      {
+        "client": "sa-test-trace",
+        "roles": [
+          "view_connectors",
+          "view_membership"
+        ]
       }
     ],
     "Cl3-CX-Semantic": [
@@ -3244,6 +3453,12 @@
           "add_semantic_model",
           "update_semantic_model",
           "delete_semantic_model"
+        ]
+      },
+      {
+        "client": "sa-test-trace",
+        "roles": [
+          "view_semantic_model"
         ]
       }
     ]
@@ -3496,7 +3711,10 @@
       "secret": "q0ma25iV6bfqV6ho3kyWKnR1trp0IRez",
       "redirectUris": [
         "http://partners-gate.tx.test/*",
-        "https://partners-gate.tx.test/*"
+        "https://partners-gate.tx.test/*",
+        "http://localhost:4200/*",
+        "http://traceability.tx.test/*",
+        "http://traceability-portal.tx.test/*"
       ],
       "webOrigins": [
         "+"
@@ -3869,7 +4087,12 @@
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
         "http://portal.tx.test/*",
-        "https://portal.tx.test/*"
+        "https://portal.tx.test/*",
+        "http://localhost:4200/*",
+        "http://traceability.tx.test/*",
+        "http://traceability-portal.tx.test/*",
+        "https://traceability.tx.test/*",
+        "https://traceability-portal.tx.test/*"
       ],
       "webOrigins": [
         "+"
@@ -7434,6 +7657,201 @@
       "authenticationFlowBindingOverrides": {},
       "fullScopeAllowed": true,
       "nodeReRegistrationTimeout": -1,
+      "defaultClientScopes": [
+        "web-origins",
+        "roles",
+        "profile",
+        "email"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "offline_access",
+        "microprofile-jwt"
+      ]
+    },
+    {
+      "id": "a3e002d8-2b88-4a1f-a4c4-78d9709d281c",
+      "clientId": "app1",
+      "baseUrl": "https://traceability-portal.tx.test/",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "redirectUris": [
+        "https://traceability-portal.tx.test/*",
+        "http://traceability-portal.tx.test/*",
+        "http://traceability-portal.tx.test/*",
+        "http://localhost:4200/*",
+        "http://traceability.tx.test/*",
+        "http://traceability-portal.tx.test/*",
+        "https://traceability.tx.test/*",
+        "https://traceability-portal.tx.test/*"
+      ],
+      "webOrigins": [
+        "+"
+      ],
+      "notBefore": 0,
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": false,
+      "publicClient": true,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "attributes": {
+        "id.token.as.detached.signature": "false",
+        "saml.assertion.signature": "false",
+        "saml.force.post.binding": "false",
+        "saml.multivalued.roles": "false",
+        "saml.encrypt": "false",
+        "oauth2.device.authorization.grant.enabled": "false",
+        "backchannel.logout.revoke.offline.tokens": "false",
+        "saml.server.signature": "false",
+        "saml.server.signature.keyinfo.ext": "false",
+        "use.refresh.tokens": "true",
+        "exclude.session.state.from.auth.response": "false",
+        "oidc.ciba.grant.enabled": "false",
+        "saml.artifact.binding": "false",
+        "backchannel.logout.session.required": "true",
+        "client_credentials.use_refresh_token": "false",
+        "saml_force_name_id_format": "false",
+        "require.pushed.authorization.requests": "false",
+        "saml.client.signature": "false",
+        "tls.client.certificate.bound.access.tokens": "false",
+        "saml.authnstatement": "false",
+        "display.on.consent.screen": "false",
+        "saml.onetimeuse.condition": "false"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": false,
+      "nodeReRegistrationTimeout": -1,
+      "protocolMappers": [
+        {
+          "id": "0bbd3258-b6a1-4a54-a4f1-4cbf2e27a513",
+          "name": "app1-mapper",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "consentRequired": false,
+          "config": {
+            "included.client.audience": "app1",
+            "id.token.claim": "false",
+            "access.token.claim": "true"
+          }
+        }
+      ],
+      "defaultClientScopes": [
+        "web-origins",
+        "roles",
+        "profile",
+        "catena",
+        "email"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "offline_access",
+        "microprofile-jwt"
+      ]
+    },
+    {
+      "id": "3e4e7545-c090-48df-9002-9c834ac6b4db",
+      "clientId": "sa-test-trace",
+      "description": "User for TraceX to access Shared Services.",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "bWSck103qNJ0jZ1LVtG9mUAlcL7R5RLg",
+      "redirectUris": [],
+      "webOrigins": [],
+      "notBefore": 0,
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": false,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": true,
+      "publicClient": false,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "attributes": {
+        "id.token.as.detached.signature": "false",
+        "saml.assertion.signature": "false",
+        "saml.force.post.binding": "false",
+        "saml.multivalued.roles": "false",
+        "saml.encrypt": "false",
+        "post.logout.redirect.uris": "+",
+        "oauth2.device.authorization.grant.enabled": "false",
+        "backchannel.logout.revoke.offline.tokens": "false",
+        "saml.server.signature": "false",
+        "saml.server.signature.keyinfo.ext": "false",
+        "use.refresh.tokens": "true",
+        "exclude.session.state.from.auth.response": "false",
+        "oidc.ciba.grant.enabled": "false",
+        "saml.artifact.binding": "false",
+        "backchannel.logout.session.required": "true",
+        "client_credentials.use_refresh_token": "false",
+        "saml_force_name_id_format": "false",
+        "saml.client.signature": "false",
+        "require.pushed.authorization.requests": "false",
+        "tls.client.certificate.bound.access.tokens": "false",
+        "saml.authnstatement": "false",
+        "display.on.consent.screen": "false",
+        "saml.onetimeuse.condition": "false"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": false,
+      "nodeReRegistrationTimeout": -1,
+      "protocolMappers": [
+        {
+          "id": "76a741d0-3bcd-425a-880e-bf0b3826e578",
+          "name": "Client IP Address",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usersessionmodel-note-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.session.note": "clientAddress",
+            "userinfo.token.claim": "true",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "clientAddress",
+            "jsonType.label": "String"
+          }
+        },
+        {
+          "id": "7f4020b7-7fce-44c7-b88c-33f838da96e0",
+          "name": "Client Host",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usersessionmodel-note-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.session.note": "clientHost",
+            "userinfo.token.claim": "true",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "clientHost",
+            "jsonType.label": "String"
+          }
+        },
+        {
+          "id": "98ad55c0-01c2-426d-9b7e-76d1cc84521d",
+          "name": "Client ID",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usersessionmodel-note-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.session.note": "client_id",
+            "userinfo.token.claim": "true",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "client_id",
+            "jsonType.label": "String"
+          }
+        }
+      ],
       "defaultClientScopes": [
         "web-origins",
         "roles",

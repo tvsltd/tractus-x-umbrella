@@ -961,3 +961,9 @@ bdrs-server-memory:
 
 discovery-mock:
   enabled: false
+
+item-relationship-service:
+  enabled: false
+
+traceability-foss:
+  enabled: false

@@ -387,6 +387,39 @@ In case that you have TLS enabled (see [Self-signed TLS setup (Optional)](#self-
 - <https://portal-backend.tx.test>
 - <https://portal.tx.test>
 
+#### Get to know the Traceability-Foss
+
+Login to the Traceability-Foss application <http://traceability-protal.tx.test>.
+
+Credentials to log into the initial example realm (CX-Operator):
+
+##### Supervisor:
+```
+tracex-supervisor@tx.test
+```
+
+```
+tractusx-umbr3lla!-supervisor
+```
+
+##### Admin:
+```
+tracex-admin@tx.test
+```
+
+```
+tractusx-umbr3lla!-admin
+```
+
+##### User:
+```
+tracex-user@tx.test
+```
+
+```
+tractusx-umbr3lla!-user
+```
+
 ### Uninstall
 
 To teardown your setup, run:

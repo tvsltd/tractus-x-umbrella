@@ -20,5 +20,68 @@
     "requiredActions" : [ ],
     "notBefore" : 0,
     "groups" : [ ]
+  },
+  {
+    "id" : "cd04956c-85d1-42d7-912b-1ffc1d59edf2",
+    "username" : "tracex-supervisor@tx.test",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "TraceX Supervisor",
+    "lastName" : "CX Operator",
+    "email" : "tracex-supervisor@tx.test",
+    "credentials" : [ {
+      "id" : "c726c4be-c82e-435f-bdd7-6db6a44ebbda",
+      "type" : "password",
+      "createdDate" : 1713385962102,
+      "secretData" : "{\"value\":\"y7udD8vWnek+U/8AUaaWr69M3pRJ0qQNOJqDk9s9KeI=\",\"salt\":\"pvmsBZX0Dw6AaXQr1GEpwA==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  },
+  {
+    "id" : "151adef9-9850-44c7-9af1-fb0a22f8d912",
+    "username" : "tracex-user@tx.test",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "TraceX User",
+    "lastName" : "CX Operator",
+    "email" : "tracex-user@tx.test",
+    "credentials" : [ {
+      "id" : "a9992ea2-f6d5-4d43-aaa6-e6573de690b4",
+      "type" : "password",
+      "createdDate" : 1713385962102,
+      "secretData" : "{\"value\":\"mbc8f+c6ZdfxyjnWRh+NtPTAJ/9lOzPleq4jk12cEEE=\",\"salt\":\"YI+kzQJLbDUWipce4QwpUw==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  },
+  {
+    "id" : "716c46ed-cc55-453a-9d63-f2d1b157dc86",
+    "username" : "tracex-admin@tx.test",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "firstName" : "TraceX Admin",
+    "lastName" : "CX Operator",
+    "email" : "tracex-admin@tx.test",
+    "credentials" : [ {
+      "id" : "5582f1fc-7db0-442d-ba56-80293444f96c",
+      "type" : "password",
+      "createdDate" : 1713385962102,
+      "secretData" : "{\"value\":\"HolWPZ+ZbyZmESBrUWtYGUB3nr00HNBZrhE1xT3KlWY=\",\"salt\":\"VCJR173nRVW2xR+E7xTNHA==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "notBefore" : 0,
+    "groups" : [ ]
   } ]
 }
