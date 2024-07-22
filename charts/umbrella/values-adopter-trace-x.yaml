@@ -382,7 +382,7 @@ traceability-foss:
 
     traceability:
       bpn: *consumerBPN
-      url: "http://traceability.tx.test"
+      url: "http://tx-backend:8080"
       leftOperand: 'https://w3id.org/catenax/policy/FrameworkAgreement'
       operatorType: 'eq'
       rightOperand: 'traceability:1.0'
@@ -432,12 +432,12 @@ traceability-foss:
       allowedCorsOriginFirst: "http://localhost:4200/"
       allowedCorsOriginSecond: "http://traceability-portal.tx.test/"
     bpdm:
-      url: "http://replace.me"
+      url: "http://irs.tx.test"  # replace with bpdm url, once available. IRS url is used, because it will return a 401
     #  required for init containers checking for dependant pod readiness before starting up backend
     dependencies:
       enabled: true
-      irs: "{{ .Release.Name }}-item-relationship-service"  # <irs-helm.nameOverride>
-      edc: "{{ .Release.Name }}-dataprovider-edc"  # <tractusx-connector.nameOverride
+      irs: "{{ .Release.Name }}-item-relationship-service"
+      edc: "{{ .Release.Name }}-dataprovider-edc"
   postgresql:
     enabled: true
 
