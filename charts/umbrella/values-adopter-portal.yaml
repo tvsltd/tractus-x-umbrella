@@ -45,7 +45,7 @@ sharedidp:
   #         enabled: true
 
 pgadmin4:
-  enabled: true
+  enabled: false
   # -- uncomment the following for persistance
   # persistentVolume:
   #   enabled: true
