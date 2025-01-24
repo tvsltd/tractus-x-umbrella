@@ -54,14 +54,14 @@ portal:
   issuerComponentAddress: "http://ssi-credential-issuer.tx.test"
   frontend:
     ingress:
-      enabled: true
+      enabled: false
       annotations:
         # uncomment the following line for tls
         # cert-manager.io/cluster-issuer: "my-ca-issuer"
-        nginx.ingress.kubernetes.io/rewrite-target: "/$1"
-        nginx.ingress.kubernetes.io/use-regex: "true"
-        nginx.ingress.kubernetes.io/enable-cors: "true"
-        nginx.ingress.kubernetes.io/cors-allow-origin: "http://*.tx.test"
+        # nginx.ingress.kubernetes.io/rewrite-target: "/$1"
+        # nginx.ingress.kubernetes.io/use-regex: "true"
+        # nginx.ingress.kubernetes.io/enable-cors: "true"
+        # nginx.ingress.kubernetes.io/cors-allow-origin: "http://*.tx.test"
       # uncomment the following lines for tls
       # tls:
       #   # -- Provide tls secret.
@@ -69,24 +69,24 @@ portal:
       #     # -- Provide host for tls secret.
       #     hosts:
       #       - "portal.tx.test"
-      hosts:
-        - host: "portal.tx.test"
-          paths:
-            - path: "/(.*)"
-              pathType: "ImplementationSpecific"
-              backend:
-                service: "portal"
-                port: 8080
-            - path: "/registration/(.*)"
-              pathType: "ImplementationSpecific"
-              backend:
-                service: "registration"
-                port: 8080
-            - path: "/((assets|documentation)/.*)"
-              pathType: "ImplementationSpecific"
-              backend:
-                service: "assets"
-                port: 8080
+      # hosts:
+      #   - host: "portal.tx.test"
+      #     paths:
+      #       - path: "/(.*)"
+      #         pathType: "ImplementationSpecific"
+      #         backend:
+      #           service: "portal"
+      #           port: 8080
+      #       - path: "/registration/(.*)"
+      #         pathType: "ImplementationSpecific"
+      #         backend:
+      #           service: "registration"
+      #           port: 8080
+      #       - path: "/((assets|documentation)/.*)"
+      #         pathType: "ImplementationSpecific"
+      #         backend:
+      #           service: "assets"
+      #           port: 8080
   backend:
     dotnetEnvironment: "Development"
     useDimWallet: true
@@ -312,15 +312,15 @@ portal:
     # http://portal-backend.tx.test/api/services/swagger/index.html
     # http://portal-backend.tx.test/api/notification/swagger/index.html
     ingress:
-      enabled: true
-      name: "portal-backend"
-      annotations:
+      enabled: false
+      # name: "portal-backend"
+      # annotations:
         # uncomment the following line for tls
         # cert-manager.io/cluster-issuer: "my-ca-issuer"
-        nginx.ingress.kubernetes.io/use-regex: "true"
-        nginx.ingress.kubernetes.io/enable-cors: "true"
-        nginx.ingress.kubernetes.io/proxy-body-size: "8m"
-        nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000, http://*.tx.test"
+        # nginx.ingress.kubernetes.io/use-regex: "true"
+        # nginx.ingress.kubernetes.io/enable-cors: "true"
+        # nginx.ingress.kubernetes.io/proxy-body-size: "8m"
+        # nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000, http://*.tx.test"
       # uncomment the following lines for tls
       # tls:
       #   # -- Provide tls secret.
@@ -328,39 +328,39 @@ portal:
       #     # -- Provide host for tls secret.
       #     hosts:
       #       - "portal-backend.tx.test"
-      hosts:
-        - host: "portal-backend.tx.test"
-          paths:
-            - path: "/api/registration"
-              pathType: "Prefix"
-              backend:
-                service: "registration-service"
-                port: 8080
-            - path: "/api/administration"
-              pathType: "Prefix"
-              backend:
-                service: "administration-service"
-                port: 8080
-            - path: "/api/notification"
-              pathType: "Prefix"
-              backend:
-                service: "notification-service"
-                port: 8080
-            - path: "/api/provisioning"
-              pathType: "Prefix"
-              backend:
-                service: "provisioning-service"
-                port: 8080
-            - path: "/api/apps"
-              pathType: "Prefix"
-              backend:
-                service: "marketplace-app-service"
-                port: 8080
-            - path: "/api/services"
-              pathType: "Prefix"
-              backend:
-                service: "services-service"
-                port: 8080
+      # hosts:
+      #   - host: "portal-backend.tx.test"
+      #     paths:
+      #       - path: "/api/registration"
+      #         pathType: "Prefix"
+      #         backend:
+      #           service: "registration-service"
+      #           port: 8080
+      #       - path: "/api/administration"
+      #         pathType: "Prefix"
+      #         backend:
+      #           service: "administration-service"
+      #           port: 8080
+      #       - path: "/api/notification"
+      #         pathType: "Prefix"
+      #         backend:
+      #           service: "notification-service"
+      #           port: 8080
+      #       - path: "/api/provisioning"
+      #         pathType: "Prefix"
+      #         backend:
+      #           service: "provisioning-service"
+      #           port: 8080
+      #       - path: "/api/apps"
+      #         pathType: "Prefix"
+      #         backend:
+      #           service: "marketplace-app-service"
+      #           port: 8080
+      #       - path: "/api/services"
+      #         pathType: "Prefix"
+      #         backend:
+      #           service: "services-service"
+      #           port: 8080
 
 centralidp:
   enabled: false
@@ -379,21 +379,21 @@ centralidp:
         persistence:
           enabled: false
     ingress:
-      enabled: true
-      ingressClassName: "nginx"
-      hostname: "centralidp.tx.test"
-      annotations:
+      enabled: false
+      # ingressClassName: "nginx"
+      # hostname: "centralidp.tx.test"
+      # annotations:
         # uncomment the following line for tls
         # cert-manager.io/cluster-issuer: "my-ca-issuer"
-        nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-        nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
-        nginx.ingress.kubernetes.io/cors-allow-origin: "http://centralidp.tx.test"
-        nginx.ingress.kubernetes.io/enable-cors: "true"
-        nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
-        nginx.ingress.kubernetes.io/proxy-buffering: "on"
-        nginx.ingress.kubernetes.io/proxy-buffers-number: "20"
-        nginx.ingress.kubernetes.io/use-regex: "true"
-      tls: false
+        # nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+        # nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
+        # nginx.ingress.kubernetes.io/cors-allow-origin: "http://centralidp.tx.test"
+        # nginx.ingress.kubernetes.io/enable-cors: "true"
+        # nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
+        # nginx.ingress.kubernetes.io/proxy-buffering: "on"
+        # nginx.ingress.kubernetes.io/proxy-buffers-number: "20"
+        # nginx.ingress.kubernetes.io/use-regex: "true"
+      # tls: false
     # uncomment the following line for tls
     # initContainers:
     #   - name: init-certs
@@ -573,21 +573,21 @@ sharedidp:
         persistence:
           enabled: false
     ingress:
-      enabled: true
-      ingressClassName: "nginx"
-      hostname: "sharedidp.tx.test"
-      annotations:
+      enabled: false
+      # ingressClassName: "nginx"
+      # hostname: "sharedidp.tx.test"
+      # annotations:
         # uncomment the following line for tls
         # cert-manager.io/cluster-issuer: "my-ca-issuer"
-        nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-        nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
-        nginx.ingress.kubernetes.io/cors-allow-origin: "http://sharedidp.tx.test"
-        nginx.ingress.kubernetes.io/enable-cors: "true"
-        nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
-        nginx.ingress.kubernetes.io/proxy-buffering: "on"
-        nginx.ingress.kubernetes.io/proxy-buffers-number: "20"
-        nginx.ingress.kubernetes.io/use-regex: "true"
-      tls: false
+        # nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+        # nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
+        # nginx.ingress.kubernetes.io/cors-allow-origin: "http://sharedidp.tx.test"
+        # nginx.ingress.kubernetes.io/enable-cors: "true"
+        # nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
+        # nginx.ingress.kubernetes.io/proxy-buffering: "on"
+        # nginx.ingress.kubernetes.io/proxy-buffers-number: "20"
+        # nginx.ingress.kubernetes.io/use-regex: "true"
+      # tls: false
     # uncomment the following line for tls
     # initContainers:
     #   - name: init-certs
