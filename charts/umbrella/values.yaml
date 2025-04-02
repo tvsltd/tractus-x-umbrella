@@ -554,8 +554,8 @@ centralidp:
           bpn: BPNL00000000BJTL
     initContainer:
       image:
-        name: docker.io/tractusx/umbrella-init-container:2.0.0-init
-        pullPolicy: IfNotPresent
+        name: 192.168.49.2:5000/init:latest
+        pullPolicy: Always
 
 sharedidp:
   enabled: false
