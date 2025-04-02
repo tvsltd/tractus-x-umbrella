@@ -11076,20 +11076,6 @@
       }
     },
     {
-      "id": "0dafd29d-dda2-48b5-85f9-57235da7ff77",
-      "alias": "create unique user config",
-      "config": {
-        "require.password.update.after.registration": "false"
-      }
-    },
-    {
-      "id": "cf8b44e3-7815-40b9-a069-304c1b9d037a",
-      "alias": "review profile config",
-      "config": {
-        "update.profile.on.first.login": "missing"
-      }
-    },
-    {
       "id": "94df033d-cc11-4708-bb2b-2d98934d708e",
       "alias": "review profile config",
       "config": {
