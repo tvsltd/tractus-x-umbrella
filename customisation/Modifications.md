@@ -1,3 +1,4 @@
+```bash
 127.0.0.1    centralidp.tx.test
 127.0.0.1    sharedidp.tx.test
 127.0.0.1    portal.tx.test
@@ -17,3 +18,14 @@
 127.0.0.1    pgadmin4.tx.test
 127.0.0.1    ssi-dim-wallet-stub.tx.test
 127.0.0.1    smtp.tx.test
+```
+
+`tx-data-provider` dns entries for `/etc/hosts`
+
+```bash
+127.0.0.1 dataprovider-submodelserver.tx.test
+127.0.0.1 example-controlplane.tx.test
+127.0.0.1 example-dataplane.tx.test
+```
+
+
