@@ -1058,7 +1058,7 @@ bpdm:
               client-secret: "changeme"
 
 dataconsumerOne:
-  enabled: false
+  enabled: true
   seedTestdata: false
   nameOverride: dataconsumer-1
   secrets:
