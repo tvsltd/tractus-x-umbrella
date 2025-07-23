@@ -786,7 +786,7 @@ selfdescription:
     #   cert-manager.io/cluster-issuer: "my-ca-issuer"
 
 ssi-credential-issuer:
-  enabled: false
+  enabled: true
   replicaCount: 1
   portalBackendAddress: "http://portal-backend.tx.test"
   walletAddress: "http://ssi-dim-wallet-stub.tx.test"
