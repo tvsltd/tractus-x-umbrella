@@ -1371,7 +1371,7 @@ dataconsumerTwo:
     enabled: false
 
 pgadmin4:
-  enabled: false
+  enabled: true
   env:
     email: pgadmin4@txtest.org
     password: tractusxpgadmin4
