@@ -1448,7 +1448,7 @@ bdrs-server-memory:
           enabled: false
 
 identity-and-trust-bundle:
-  enabled: false
+  enabled: true
   ssi-dim-wallet-stub:
     wallet:
       replicaCount: 1
