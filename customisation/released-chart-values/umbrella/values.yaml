@@ -1144,7 +1144,7 @@ dataconsumerOne:
     enabled: false
 
 tx-data-provider:
-  enabled: false
+  enabled: true
   seedTestdata: true
   backendUrl: http://{{ .Release.Name }}-dataprovider-submodelserver:8080
   registryUrl: http://{{ .Release.Name }}-dataprovider-dtr:8080/api/v3
