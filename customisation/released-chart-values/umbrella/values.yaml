@@ -565,7 +565,7 @@ centralidp:
         pullPolicy: IfNotPresent
 
 sharedidp:
-  enabled: true
+  enabled: false
   keycloak:
     nameOverride: "sharedidp"
     auth:
@@ -656,7 +656,7 @@ sharedidp:
             clientSecret: "changeme"
 
 bpndiscovery:
-  enabled: false
+  enabled: true
   enablePostgres: true
   bpndiscovery:
     host: semantics.tx.test
@@ -873,7 +873,7 @@ ssi-credential-issuer:
 # Set up services for a business partner pool, golden record process
 # and a gate with which the Portal and the users can share business partner data
 bpdm:
-  enabled: false
+  enabled: true
   postgres:
     # We use the default name for BPDM postgres
     fullnameOverride: &bpdmPostgresName "bpdm-postgres"

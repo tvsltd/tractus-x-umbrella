@@ -1,3 +1,4 @@
+ip address mapping with `minikube tunnel` and `LoadBalancer` service
 ```bash
 127.0.0.1    centralidp.tx.test
 127.0.0.1    sharedidp.tx.test
