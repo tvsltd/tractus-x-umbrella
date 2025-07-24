@@ -2,20 +2,10 @@
     errors
     health
     ready
-
-    # ✅ Custom override for .test domains
-    test:53 {
-        hosts {
-            10.109.94.24 centralidp.tx.test sharedidp.tx.test portal.tx.test portal-backend.tx.test semantics.tx.test sdfactory.tx.test ssi-credential-issuer.tx.test dataconsumer-1-dataplane.tx.test dataconsumer-1-controlplane.tx.test dataprovider-dataplane.tx.test dataprovider-controlplane.tx.test dataprovider-submodelserver.tx.test dataconsumer-2-dataplane.tx.test dataconsumer-2-controlplane.tx.test bdrs-server.tx.test business-partners.tx.test pgadmin4.tx.test ssi-dim-wallet-stub.tx.test smtp.tx.test
-            fallthrough
-        }
-    }
-
     kubernetes cluster.local in-addr.arpa ip6.arpa {
       pods insecure
       fallthrough in-addr.arpa ip6.arpa
     }
-
     prometheus :9153
     forward . /etc/resolv.conf
     cache 300 {
@@ -27,3 +17,19 @@
     import custom/*.override
 }
 import custom/*.server
+
+# ——————————————————————————————
+# “test” zone: all queries under *.test → 10.109.94.24
+test:53 {
+    errors
+    # the template plugin will answer any A‐record under “test.”
+    template ANY A {
+      # match anything ending in “.test.”
+      match ^(.+)\.test\.$
+      # reply with the same name at TTL=60 pointing at your ingress IP
+      answer "{{.Name}} 60 IN A 10.109.94.24"
+    }
+    cache  60
+    loop
+    reload
+}
