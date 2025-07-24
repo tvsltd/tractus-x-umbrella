@@ -1,3 +1,4 @@
+# dnsmasq Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,11 +16,18 @@ spec:
     spec:
       containers:
       - name: dnsmasq
-        image: dockurr/dnsmasq
-        args: ["-k", "--conf-file=/etc/dnsmasq/dnsmasq.conf"]
+        image: dockurr/dnsmasq:latest
+        # Option A: mount ConfigMap
         volumeMounts:
         - name: config
-          mountPath: /etc/dnsmasq
+          mountPath: /etc/dnsmasq.d
+        # Option B: or use args:
+        # args:
+        # - "--address=/tx.test/10.109.64.20"
+        # - "--no-hosts"
+        # - "--log-facility=-"
+        # - "--listen-address=0.0.0.0"
+        # - "--port=53"
       volumes:
       - name: config
         configMap:

@@ -5,8 +5,12 @@ metadata:
   namespace: kube-system
 data:
   dnsmasq.conf: |
-    # catch-all for any <name>.tx.test
+    # catch-all for *.tx.test
     address=/tx.test/10.109.94.24
-    # listen only on localhost (we’ll expose on a ClusterIP svc)
+    # don't read /etc/hosts (optional)
+    no-hosts
+    # log queries to stdout
+    log-facility=-
+    # bind only to loopback inside container
     listen-address=127.0.0.1
     port=53
