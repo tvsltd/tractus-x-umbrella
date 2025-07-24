@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tx-test-dns
+  namespace: kube-system
+spec:
+  selector:
+    app: tx-test-dns
+  ports:
+  - port: 53
+    protocol: UDP

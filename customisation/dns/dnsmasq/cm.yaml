@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tx-test-dns
+  namespace: kube-system
+data:
+  dnsmasq.conf: |
+    # catch-all for any <name>.tx.test
+    address=/tx.test/10.109.94.24
+    # listen only on localhost (we’ll expose on a ClusterIP svc)
+    listen-address=127.0.0.1
+    port=53

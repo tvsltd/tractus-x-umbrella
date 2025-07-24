@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tx-test-dns
+  namespace: kube-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tx-test-dns
+  template:
+    metadata:
+      labels:
+        app: tx-test-dns
+    spec:
+      containers:
+      - name: dnsmasq
+        image: dockurr/dnsmasq
+        args: ["-k", "--conf-file=/etc/dnsmasq/dnsmasq.conf"]
+        volumeMounts:
+        - name: config
+          mountPath: /etc/dnsmasq
+      volumes:
+      - name: config
+        configMap:
+          name: tx-test-dns
