@@ -16,20 +16,12 @@
     loadbalance
     import custom/*.override
 }
-import custom/*.server
-
 # ——————————————————————————————
 # “test” zone: all queries under *.test → 10.109.94.24
-test:53 {
-    errors
-    # the template plugin will answer any A‐record under “test.”
-    template ANY A {
-      # match anything ending in “.test.”
-      match ^(.+)\.test\.$
-      # reply with the same name at TTL=60 pointing at your ingress IP
-      answer "{{.Name}} 60 IN A 10.109.94.24"
-    }
-    cache  60
-    loop
-    reload
+tx.test:53 {
+  errors
+  cache 30
+  forward . 10.109.94.24  # your internal DNS servers
 }
+
+import custom/*.server
