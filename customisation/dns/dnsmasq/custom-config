@@ -21,7 +21,7 @@ tx.test:53 {
   errors
   log
   cache 30
-  forward . tx-test-dns.kube-system.svc.cluster.local  # your internal DNS servers
+  forward . 10.109.95.208  # your internal DNS servers
 }
 
 import custom/*.server
