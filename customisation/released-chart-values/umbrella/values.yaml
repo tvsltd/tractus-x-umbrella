@@ -18,7 +18,7 @@
 # #############################################################################
 ---
 portal:
-  enabled: false
+  enabled: true
   replicaCount: 1
   postgresql:
     nameOverride: "portal-backend-postgresql"
@@ -873,7 +873,7 @@ ssi-credential-issuer:
 # Set up services for a business partner pool, golden record process
 # and a gate with which the Portal and the users can share business partner data
 bpdm:
-  enabled: true
+  enabled: false
   postgres:
     # We use the default name for BPDM postgres
     fullnameOverride: &bpdmPostgresName "bpdm-postgres"
