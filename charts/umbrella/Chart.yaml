@@ -70,7 +70,7 @@ dependencies:
   # semantic-hub
   - condition: semantic-hub.enabled
     name: semantic-hub
-    repository: https://eclipse-tractusx.github.io/charts/dev
+    repository: file://./charts/semantic-hub
     version: 0.5.0
   # Business Partner Data Management
   - name: bpdm
