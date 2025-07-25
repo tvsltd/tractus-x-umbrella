@@ -1391,7 +1391,7 @@ pgadmin4:
 bdrs-server-memory:
   nameOverride: bdrs-server
   fullnameOverride: bdrs-server
-  enabled: false
+  enabled: true
   seeding:
     url: "http://bdrs-server:8081"
     enabled: true
