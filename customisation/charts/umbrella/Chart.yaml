@@ -14,11 +14,11 @@ dependencies:
   version: 4.2.0
 - condition: discoveryfinder.enabled
   name: discoveryfinder
-  repository: https://eclipse-tractusx.github.io/charts/dev
+  repository: file://./charts/discoveryfinder
   version: 0.5.1
 - condition: bpndiscovery.enabled
   name: bpndiscovery
-  repository: https://eclipse-tractusx.github.io/charts/dev
+  repository: file://./charts/bpndiscovery
   version: 0.5.1
 - alias: selfdescription
   condition: selfdescription.enabled
@@ -31,7 +31,7 @@ dependencies:
   version: 1.4.0
 - condition: semantic-hub.enabled
   name: semantic-hub
-  repository: https://eclipse-tractusx.github.io/charts/dev
+  repository: file://./charts/semantic-hub
   version: 0.5.0
 - condition: bpdm.enabled
   name: bpdm
