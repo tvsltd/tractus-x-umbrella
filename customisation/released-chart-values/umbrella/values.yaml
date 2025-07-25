@@ -565,7 +565,7 @@ centralidp:
         pullPolicy: IfNotPresent
 
 sharedidp:
-  enabled: false
+  enabled: true
   keycloak:
     nameOverride: "sharedidp"
     auth:
