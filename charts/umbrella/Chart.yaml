@@ -54,7 +54,7 @@ dependencies:
     # bpn-discovery
   - condition: bpndiscovery.enabled
     name: bpndiscovery
-    repository: https://eclipse-tractusx.github.io/charts/dev
+    repository: file://./charts/bpndiscovery
     version: 0.5.1
     # sd-factory
   - condition: selfdescription.enabled

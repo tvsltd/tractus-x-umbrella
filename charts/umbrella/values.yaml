@@ -18,7 +18,7 @@
 # #############################################################################
 ---
 portal:
-  enabled: false
+  enabled: true
   replicaCount: 1
   postgresql:
     nameOverride: "portal-backend-postgresql"
@@ -64,6 +64,7 @@ portal:
       annotations:
         # uncomment the following line for tls
         # cert-manager.io/cluster-issuer: "my-ca-issuer"
+        kubernetes.io/ingress.class: "nginx" # this is deprecated in favor of ingressClassName
         nginx.ingress.kubernetes.io/rewrite-target: "/$1"
         nginx.ingress.kubernetes.io/use-regex: "true"
         nginx.ingress.kubernetes.io/enable-cors: "true"
@@ -322,6 +323,7 @@ portal:
       annotations:
         # uncomment the following line for tls
         # cert-manager.io/cluster-issuer: "my-ca-issuer"
+        kubernetes.io/ingress.class: "nginx" # this is deprecated in favor of ingressClassName
         nginx.ingress.kubernetes.io/use-regex: "true"
         nginx.ingress.kubernetes.io/enable-cors: "true"
         nginx.ingress.kubernetes.io/proxy-body-size: "8m"
@@ -368,7 +370,7 @@ portal:
                 port: 8080
 
 centralidp:
-  enabled: false
+  enabled: true
   keycloak:
     nameOverride: "centralidp"
     replicaCount: 1
@@ -565,7 +567,7 @@ centralidp:
         pullPolicy: IfNotPresent
 
 sharedidp:
-  enabled: false
+  enabled: true
   keycloak:
     nameOverride: "sharedidp"
     auth:
@@ -656,7 +658,7 @@ sharedidp:
             clientSecret: "changeme"
 
 bpndiscovery:
-  enabled: false
+  enabled: true
   enablePostgres: true
   bpndiscovery:
     host: semantics.tx.test
@@ -667,8 +669,8 @@ bpndiscovery:
       className: "nginx"
       annotations:
         cert-manager.io/cluster-issuer: "my-ca-issuer"
-        nginx.ingress.kubernetes.io/rewrite-target: "/$2"
-        nginx.ingress.kubernetes.io/use-regex: "true"
+        # nginx.ingress.kubernetes.io/rewrite-target: "/$2"
+        # nginx.ingress.kubernetes.io/use-regex: "true"
         nginx.ingress.kubernetes.io/enable-cors: "true"
         nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
         nginx.ingress.kubernetes.io/x-forwarded-prefix: "/bpndiscovery"
@@ -706,7 +708,7 @@ bpndiscovery:
       postgresPassword: "dbpasswordbpndiscovery"
 
 discoveryfinder:
-  enabled: false
+  enabled: true
   enablePostgres: true
   discoveryfinder:
     authentication: true
@@ -751,7 +753,7 @@ discoveryfinder:
       postgresPassword: "dbpassworddiscoveryfinder"
 
 selfdescription:
-  enabled: false
+  enabled: true
   sdfactory:
     secret:
       # -- JWK Set URI
@@ -786,7 +788,7 @@ selfdescription:
     #   cert-manager.io/cluster-issuer: "my-ca-issuer"
 
 ssi-credential-issuer:
-  enabled: false
+  enabled: true
   replicaCount: 1
   portalBackendAddress: "http://portal-backend.tx.test"
   walletAddress: "http://ssi-dim-wallet-stub.tx.test"
@@ -873,7 +875,7 @@ ssi-credential-issuer:
 # Set up services for a business partner pool, golden record process
 # and a gate with which the Portal and the users can share business partner data
 bpdm:
-  enabled: false
+  enabled: true
   postgres:
     # We use the default name for BPDM postgres
     fullnameOverride: &bpdmPostgresName "bpdm-postgres"
@@ -906,8 +908,8 @@ bpdm:
       hosts:
         - host: "business-partners.tx.test"
           paths:
-            - path: "/gate(/|$)(.*)"
-              pathType: "ImplementationSpecific"
+            - path: "/gate"
+              pathType: "Prefix"
     applicationConfig:
       server:
         # App should take the x-forward-header-prefix into account for Swagger-UI and redirects to work correctly
@@ -967,8 +969,8 @@ bpdm:
       hosts:
         - host: "business-partners.tx.test"
           paths:
-            - path: "/pool(/|$)(.*)"
-              pathType: "ImplementationSpecific"
+            - path: "/pool"
+              pathType: "Prefix"
     applicationConfig:
       server:
         # App should take the x-forward-header-prefix into account for Swagger-UI and redirects to work correctly
@@ -1014,8 +1016,8 @@ bpdm:
       hosts:
         - host: "business-partners.tx.test"
           paths:
-            - path: "/orchestrator(/|$)(.*)"
-              pathType: "ImplementationSpecific"
+            - path: "/orchestrator"
+              pathType: "Prefix"
     postgres:
       enabled: false
       fullnameOverride: bpdm-postgres
@@ -1058,7 +1060,7 @@ bpdm:
               client-secret: "changeme"
 
 dataconsumerOne:
-  enabled: false
+  enabled: true
   seedTestdata: false
   nameOverride: dataconsumer-1
   secrets:
@@ -1144,7 +1146,7 @@ dataconsumerOne:
     enabled: false
 
 tx-data-provider:
-  enabled: false
+  enabled: true
   seedTestdata: true
   backendUrl: http://{{ .Release.Name }}-dataprovider-submodelserver:8080
   registryUrl: http://{{ .Release.Name }}-dataprovider-dtr:8080/api/v3
@@ -1249,7 +1251,7 @@ tx-data-provider:
       fullnameOverride: "dataprovider-digital-twin-db"
 
 semantic-hub:
-  enabled: false
+  enabled: true
   enableKeycloak: false
   keycloak:
     postgresql:
@@ -1278,8 +1280,8 @@ semantic-hub:
         nginx.ingress.kubernetes.io/x-forwarded-prefix: "/hub"
   graphdb:
     enabled: true
-    image: jena-fuseki-docker:5.0.0
-    imagePullPolicy: Never
+    image: stain/jena-fuseki:5.0.0
+    imagePullPolicy: IfNotPresent
     storageClassName: ""
     storageSize: 8Gi
 
@@ -1371,7 +1373,7 @@ dataconsumerTwo:
     enabled: false
 
 pgadmin4:
-  enabled: false
+  enabled: true
   env:
     email: pgadmin4@txtest.org
     password: tractusxpgadmin4
@@ -1389,7 +1391,7 @@ pgadmin4:
 bdrs-server-memory:
   nameOverride: bdrs-server
   fullnameOverride: bdrs-server
-  enabled: false
+  enabled: true
   seeding:
     url: "http://bdrs-server:8081"
     enabled: true
@@ -1448,7 +1450,7 @@ bdrs-server-memory:
           enabled: false
 
 identity-and-trust-bundle:
-  enabled: false
+  enabled: true
   ssi-dim-wallet-stub:
     wallet:
       replicaCount: 1
@@ -1492,11 +1494,9 @@ identity-and-trust-bundle:
       service:
         type: ClusterIP
         port: 8080
-    keycloak:
-      enabled: false
 
 smtp4dev:
-  enabled: false
+  enabled: true
   ingress:
     url: smtp.tx.test
   ports:
