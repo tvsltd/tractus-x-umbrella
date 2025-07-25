@@ -669,8 +669,8 @@ bpndiscovery:
       className: "nginx"
       annotations:
         cert-manager.io/cluster-issuer: "my-ca-issuer"
-        nginx.ingress.kubernetes.io/rewrite-target: "/$2"
-        nginx.ingress.kubernetes.io/use-regex: "true"
+        # nginx.ingress.kubernetes.io/rewrite-target: "/$2"
+        # nginx.ingress.kubernetes.io/use-regex: "true"
         nginx.ingress.kubernetes.io/enable-cors: "true"
         nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
         nginx.ingress.kubernetes.io/x-forwarded-prefix: "/bpndiscovery"
