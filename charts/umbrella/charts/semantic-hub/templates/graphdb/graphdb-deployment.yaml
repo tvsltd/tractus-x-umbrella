@@ -52,17 +52,18 @@ spec:
 {{ .Values.graphdb.args | toYaml | indent 12 }}
           resources:
 {{ .Values.graphdb.resources | toYaml | indent 12 }}
-          # volumeMounts:
-          #   - name: graphdbdata
-          #     mountPath: /fuseki/databases
-          #     subPath: databases
-          #   - name: graphdbdata
-          #     mountPath: /fuseki/logs
-          #     subPath: logs
+          volumeMounts:
+            - name: graphdbdata
+              mountPath: /fuseki/databases
+              subPath: databases
+            - name: graphdbdata
+              mountPath: /fuseki/logs
+              subPath: logs
       imagePullSecrets:
 {{ .Values.graphdb.imagePullSecrets | toYaml | indent 8 }}
-      # volumes:
-      #   - name: graphdbdata
-      #     persistentVolumeClaim:
-      #       claimName: {{ $pvc_name }}
+      volumes:
+        - name: graphdbdata
+          emptyDir: {}
+          # persistentVolumeClaim:
+          #   claimName: {{ $pvc_name }}
 {{- end -}}
