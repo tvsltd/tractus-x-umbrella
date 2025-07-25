@@ -38,7 +38,7 @@ spec:
     - host: {{ .Values.discoveryfinder.host }}
       http:
         paths:
-          - path: {{printf "%s(/|$)(.*)" .Values.discoveryfinder.ingress.urlPrefix }}
+          - path: {{printf "%s" .Values.discoveryfinder.ingress.urlPrefix }}
             pathType: Prefix
             backend:
               service:
