@@ -39,7 +39,7 @@ spec:
       http:
         paths:
           - path: {{printf "%s(/|$)(.*)" .Values.discoveryfinder.ingress.urlPrefix }}
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: {{ include "df.fullname" . }}
