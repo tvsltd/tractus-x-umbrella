@@ -889,7 +889,7 @@ bpdm:
         enabled: false
   centralidp:
     # We use Central-IDP as authentication server
-    enabled: false
+    enabled: true
   # Set up a Gate that acts as the Portal's Gate
   bpdm-gate:
     postgres:
