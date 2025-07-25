@@ -18,17 +18,17 @@
 # SPDX-License-Identifier: Apache-2.0
 ###############################################################
 
-{{- if and (.Values.graphdb.enabled) (not .Values.hub.embeddedTripleStore) }}
-{{- $pvc_name := printf "cx-%s-graphdb-pvc" .Release.Name }}
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: {{ $pvc_name }}
-spec:
-  storageClassName: {{ .Values.graphdb.storageClassName }}
-  accessModes:
-{{ .Values.graphdb.pvcAccessModes | toYaml | indent 4 }}
-  resources:
-    requests:
-      storage: {{ .Values.graphdb.storageSize }}
-{{- end -}}
+# {{- if and (.Values.graphdb.enabled) (not .Values.hub.embeddedTripleStore) }}
+# {{- $pvc_name := printf "cx-%s-graphdb-pvc" .Release.Name }}
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: {{ $pvc_name }}
+# spec:
+#   storageClassName: {{ .Values.graphdb.storageClassName }}
+#   accessModes:
+# {{ .Values.graphdb.pvcAccessModes | toYaml | indent 4 }}
+#   resources:
+#     requests:
+#       storage: {{ .Values.graphdb.storageSize }}
+# {{- end -}}

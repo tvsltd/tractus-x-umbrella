@@ -63,6 +63,7 @@ spec:
 {{ .Values.graphdb.imagePullSecrets | toYaml | indent 8 }}
       volumes:
         - name: graphdbdata
-          persistentVolumeClaim:
-            claimName: {{ $pvc_name }}
+          emptyDir: {}
+          # persistentVolumeClaim:
+          #   claimName: {{ $pvc_name }}
 {{- end -}}
