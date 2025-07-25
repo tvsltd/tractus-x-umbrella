@@ -908,8 +908,8 @@ bpdm:
       hosts:
         - host: "business-partners.tx.test"
           paths:
-            - path: "/gate(/|$)(.*)"
-              pathType: "ImplementationSpecific"
+            - path: "/gate"
+              pathType: "Prefix"
     applicationConfig:
       server:
         # App should take the x-forward-header-prefix into account for Swagger-UI and redirects to work correctly
@@ -969,8 +969,8 @@ bpdm:
       hosts:
         - host: "business-partners.tx.test"
           paths:
-            - path: "/pool(/|$)(.*)"
-              pathType: "ImplementationSpecific"
+            - path: "/pool"
+              pathType: "Prefix"
     applicationConfig:
       server:
         # App should take the x-forward-header-prefix into account for Swagger-UI and redirects to work correctly
@@ -1016,8 +1016,8 @@ bpdm:
       hosts:
         - host: "business-partners.tx.test"
           paths:
-            - path: "/orchestrator(/|$)(.*)"
-              pathType: "ImplementationSpecific"
+            - path: "/orchestrator"
+              pathType: "Prefix"
     postgres:
       enabled: false
       fullnameOverride: bpdm-postgres
