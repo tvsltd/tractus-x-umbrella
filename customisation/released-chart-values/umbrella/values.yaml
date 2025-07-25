@@ -708,7 +708,7 @@ bpndiscovery:
       postgresPassword: "dbpasswordbpndiscovery"
 
 discoveryfinder:
-  enabled: false
+  enabled: true
   enablePostgres: true
   discoveryfinder:
     authentication: true
@@ -753,7 +753,7 @@ discoveryfinder:
       postgresPassword: "dbpassworddiscoveryfinder"
 
 selfdescription:
-  enabled: false
+  enabled: true
   sdfactory:
     secret:
       # -- JWK Set URI
@@ -1251,7 +1251,7 @@ tx-data-provider:
       fullnameOverride: "dataprovider-digital-twin-db"
 
 semantic-hub:
-  enabled: false
+  enabled: true
   enableKeycloak: false
   keycloak:
     postgresql:
