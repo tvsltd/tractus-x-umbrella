@@ -39,7 +39,7 @@ spec:
     - host: {{ .Values.hub.host }}
       http:
         paths:
-          - path: {{printf "%s(/|$)(.*)" .Values.hub.ingress.urlPrefix }}
+          - path: {{printf "%s" .Values.hub.ingress.urlPrefix }}
             pathType: Prefix
             backend:
               service:
