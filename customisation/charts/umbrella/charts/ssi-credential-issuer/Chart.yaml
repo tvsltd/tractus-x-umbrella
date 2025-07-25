@@ -1,0 +1,12 @@
+apiVersion: v2
+appVersion: 1.4.0
+dependencies:
+- condition: postgresql.enabled
+  name: postgresql
+  repository: https://charts.bitnami.com/bitnami
+  version: 12.12.x
+description: Helm chart for SSI Credential Issuer
+home: https://github.com/eclipse-tractusx/ssi-credential-issuer
+name: ssi-credential-issuer
+type: application
+version: 1.4.0

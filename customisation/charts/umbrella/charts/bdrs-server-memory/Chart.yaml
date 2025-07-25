@@ -1,0 +1,10 @@
+apiVersion: v2
+appVersion: 0.5.4
+description: A Helm chart for the Tractus-X BPN-DID Resolution Service (only in-memory
+  persistence)
+home: https://github.com/eclipse-tractusx/bpn-did-resolution-service/tree/main/charts/bdrs-server
+name: bdrs-server-memory
+sources:
+- https://github.com/eclipse-tractusx/bpn-did-resolution-service/tree/main/charts/bdrs-server
+type: application
+version: 0.5.4

@@ -1,0 +1,11 @@
+apiVersion: v2
+description: A library Helm Chart for other BPDM Charts
+home: https://eclipse-tractusx.github.io/docs/kits/Business%20Partner%20Kit/Adoption%20View
+maintainers:
+- name: Nico Koprowski
+- name: Sujit Karne
+name: bpdm-common
+sources:
+- https://github.com/eclipse-tractusx/bpdm
+type: library
+version: 1.0.4
