@@ -875,7 +875,7 @@ ssi-credential-issuer:
 # Set up services for a business partner pool, golden record process
 # and a gate with which the Portal and the users can share business partner data
 bpdm:
-  enabled: false
+  enabled: true
   postgres:
     # We use the default name for BPDM postgres
     fullnameOverride: &bpdmPostgresName "bpdm-postgres"
@@ -891,7 +891,7 @@ bpdm:
         enabled: false
   centralidp:
     # We use Central-IDP as authentication server
-    enabled: true
+    enabled: false
   # Set up a Gate that acts as the Portal's Gate
   bpdm-gate:
     postgres:
