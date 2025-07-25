@@ -1280,8 +1280,8 @@ semantic-hub:
         nginx.ingress.kubernetes.io/x-forwarded-prefix: "/hub"
   graphdb:
     enabled: true
-    image: jena-fuseki-docker:5.0.0
-    imagePullPolicy: Never
+    image: stain/jena-fuseki-docker:5.0.0
+    # imagePullPolicy: Never
     storageClassName: ""
     storageSize: 8Gi
 
