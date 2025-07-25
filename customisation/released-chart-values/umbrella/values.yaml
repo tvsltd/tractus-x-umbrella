@@ -1281,7 +1281,7 @@ semantic-hub:
   graphdb:
     enabled: true
     image: stain/jena-fuseki-docker:5.0.0
-    # imagePullPolicy: Never
+    imagePullPolicy: IfNotPresent
     storageClassName: ""
     storageSize: 8Gi
 
