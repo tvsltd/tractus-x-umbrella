@@ -1496,7 +1496,7 @@ identity-and-trust-bundle:
         port: 8080
 
 smtp4dev:
-  enabled: false
+  enabled: true
   ingress:
     url: smtp.tx.test
   ports:
