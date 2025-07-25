@@ -656,7 +656,7 @@ sharedidp:
             clientSecret: "changeme"
 
 bpndiscovery:
-  enabled: true
+  enabled: false
   enablePostgres: true
   bpndiscovery:
     host: semantics.tx.test
